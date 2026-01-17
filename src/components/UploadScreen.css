@@ -20,82 +20,89 @@
 .circle {
   position: absolute;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .circle-1 {
   width: 140px;
   height: 140px;
-  top: 15%;
-  left: -5%;
+  top: 5%;
+  left: -6%;
+  background: linear-gradient(135deg, rgba(77, 208, 225, 0.4), rgba(77, 208, 225, 0.2));
   animation: float 7s ease-in-out infinite;
 }
 
 .circle-2 {
   width: 90px;
   height: 90px;
-  top: 55%;
-  right: -3%;
+  top: 10%;
+  right: -4%;
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.4), rgba(255, 107, 53, 0.2));
   animation: float 9s ease-in-out infinite reverse;
 }
 
 .circle-3 {
   width: 160px;
   height: 160px;
-  bottom: 10%;
-  left: 10%;
+  bottom: 5%;
+  left: -8%;
+  background: linear-gradient(135deg, rgba(233, 30, 99, 0.4), rgba(233, 30, 99, 0.2));
   animation: float 6s ease-in-out infinite;
 }
 
 .circle-4 {
   width: 70px;
   height: 70px;
-  top: 25%;
-  right: 25%;
+  top: 15%;
+  right: -3%;
+  background: linear-gradient(135deg, rgba(156, 39, 176, 0.4), rgba(156, 39, 176, 0.2));
   animation: float 8s ease-in-out infinite reverse;
 }
 
 .circle-5 {
   width: 110px;
   height: 110px;
-  top: 75%;
-  right: 8%;
+  bottom: 10%;
+  right: -5%;
+  background: linear-gradient(135deg, rgba(63, 81, 181, 0.4), rgba(63, 81, 181, 0.2));
   animation: float 7.5s ease-in-out infinite;
 }
 
 .circle-6 {
   width: 85px;
   height: 85px;
-  top: 15%;
-  left: 45%;
+  top: -3%;
+  left: 10%;
+  background: linear-gradient(135deg, rgba(0, 188, 212, 0.4), rgba(0, 188, 212, 0.2));
   animation: float 6.5s ease-in-out infinite reverse;
 }
 
 .circle-7 {
   width: 95px;
   height: 95px;
-  bottom: 35%;
-  right: 35%;
+  bottom: -4%;
+  right: 8%;
+  background: linear-gradient(135deg, rgba(255, 152, 0, 0.4), rgba(255, 152, 0, 0.2));
   animation: float 8.5s ease-in-out infinite;
 }
 
 .circle-8 {
   width: 125px;
   height: 125px;
-  top: 45%;
-  left: 25%;
+  top: -5%;
+  right: 12%;
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.4), rgba(76, 175, 80, 0.2));
   animation: float 7s ease-in-out infinite reverse;
 }
 
 @keyframes float {
   0%, 100% {
     transform: translate(0, 0) scale(1);
-    opacity: 0.08;
+    opacity: 0.2;
   }
   50% {
     transform: translate(25px, -25px) scale(1.15);
-    opacity: 0.12;
+    opacity: 0.3;
   }
 }
 
