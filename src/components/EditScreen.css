@@ -1,0 +1,420 @@
+.edit-screen {
+  min-height: 100vh;
+  padding: 0 20px 30px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.background-circles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.circle-1 {
+  width: 130px;
+  height: 130px;
+  top: 12%;
+  left: -8%;
+  animation: float 6.5s ease-in-out infinite;
+}
+
+.circle-2 {
+  width: 75px;
+  height: 75px;
+  top: 58%;
+  right: -5%;
+  animation: float 8.5s ease-in-out infinite reverse;
+}
+
+.circle-3 {
+  width: 155px;
+  height: 155px;
+  bottom: 12%;
+  left: 12%;
+  animation: float 7s ease-in-out infinite;
+}
+
+.circle-4 {
+  width: 65px;
+  height: 65px;
+  top: 28%;
+  right: 22%;
+  animation: float 7.5s ease-in-out infinite reverse;
+}
+
+.circle-5 {
+  width: 105px;
+  height: 105px;
+  top: 78%;
+  right: 10%;
+  animation: float 8s ease-in-out infinite;
+}
+
+.circle-6 {
+  width: 80px;
+  height: 80px;
+  top: 18%;
+  left: 48%;
+  animation: float 6s ease-in-out infinite reverse;
+}
+
+.circle-7 {
+  width: 100px;
+  height: 100px;
+  bottom: 38%;
+  right: 32%;
+  animation: float 7.8s ease-in-out infinite;
+}
+
+.circle-8 {
+  width: 120px;
+  height: 120px;
+  top: 48%;
+  left: 28%;
+  animation: float 6.8s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.08;
+  }
+  50% {
+    transform: translate(22px, -22px) scale(1.12);
+    opacity: 0.12;
+  }
+}
+
+.edit-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.image-selection {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.thumbnail-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.thumbnail {
+  width: 70px;
+  height: 70px;
+  position: relative;
+  background: white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thumbnail-image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.remove-thumbnail {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #F44336;
+  color: white;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  padding: 0;
+}
+
+.add-thumbnail {
+  width: 70px;
+  height: 70px;
+  background: white;
+  border-radius: 8px;
+  border: 2px dashed #4DD0E1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.plus-icon {
+  font-size: 32px;
+  color: #4DD0E1;
+  font-weight: 300;
+}
+.mainPreviewContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+ 
+}
+.main-preview {
+  width: 60%;
+  height: 200px;
+  background: white;
+  border-radius: 12px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.preview-image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.remove-preview {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #F44336;
+  color: white;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.frame-selection,
+.text-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-direction: column;
+  gap: 15px;
+}
+
+.section-title {
+  color: #4DD0E1;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.frame-options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  overflow-x: auto;
+  padding-bottom: 5px;
+}
+
+.frame-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  min-width: 100px;
+}
+
+.frame-preview {
+  width: 100px;
+  height: 80px;
+  background: white;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.frame-image-placeholder {
+  width: 80%;
+  height: 80%;
+  background: #f0f0f0;
+  border-radius: 4px;
+}
+
+.colorful-border {
+  position: absolute;
+  inset: 0;
+  border: 8px solid;
+  border-image: linear-gradient(45deg, #FF6B35, #E91E63, #9C27B0, #4DD0E1) 1;
+  border-radius: 8px;
+}
+
+.classic-border {
+  position: absolute;
+  inset: 0;
+  border: 4px solid #ddd;
+  border-radius: 8px;
+}
+
+.frame-label {
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.text-input {
+  width: 80%;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: none;
+  background: transparent;
+  border: 1px solid white;
+  font-size: 16px;
+  color: #333;
+}
+
+.text-input::placeholder {
+  color: #999;
+}
+
+.date-toggle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.toggle-label {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 28px;
+}
+
+.toggle-checkbox {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: 0.3s;
+  border-radius: 28px;
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 50%;
+}
+
+.toggle-checkbox:checked + .toggle-slider {
+  background-color: #4DD0E1;
+}
+
+.toggle-checkbox:checked + .toggle-slider:before {
+  transform: translateX(22px);
+}
+
+.toggle-text {
+  color: white;
+  font-size: 14px;
+}
+.nextbtncontainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.btn-next {
+  width: 70%;
+  padding: 12px 24px;
+  border-radius: 30px;
+  border: none;
+  background: #4DD0E1;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: auto;
+  transition: transform 0.2s, opacity 0.2s;
+
+
+}
+
+.btn-next:active {
+  transform: scale(0.98);
+  opacity: 0.9;
+}
+
+.arrow-icon {
+  width: 20px;
+  height: 20px;
+}
+
+
+
+.titleContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}

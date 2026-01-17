@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Common gradient backgrounds */
+.gradient-welcome {
+  background: linear-gradient(90deg, #E91E63 0%, #9C27B0 100%);
+}
+
+.gradient-main {
+  background: linear-gradient(90deg, #F44336 0%, #9C27B0 100%);
+}
+
+.gradient-edit {
+  background: linear-gradient(180deg, #FF1744 0%, #9C27B0 100%);
+}
+
+/* Mobile view only - max width constraint */
+.app {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+@media (min-width: 428px) {
+  .app {
+    max-width: 428px;
+    margin: 0 auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    min-height: 100vh;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+  }
+}
+

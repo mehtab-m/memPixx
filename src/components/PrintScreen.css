@@ -1,0 +1,236 @@
+.print-screen {
+  min-height: 100vh;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+.logo-container {
+
+  margin: 0 auto;
+  /* margin-bottom: 60px; */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  
+}
+.background-circles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.circle-1 {
+  width: 125px;
+  height: 125px;
+  top: 8%;
+  left: -6%;
+  animation: float 6.8s ease-in-out infinite;
+}
+
+.circle-2 {
+  width: 88px;
+  height: 88px;
+  top: 50%;
+  right: -3%;
+  animation: float 8.8s ease-in-out infinite reverse;
+}
+
+.circle-3 {
+  width: 150px;
+  height: 150px;
+  bottom: 10%;
+  left: 9%;
+  animation: float 7.3s ease-in-out infinite;
+}
+
+.circle-4 {
+  width: 72px;
+  height: 72px;
+  top: 24%;
+  right: 24%;
+  animation: float 7.8s ease-in-out infinite reverse;
+}
+
+.circle-5 {
+  width: 108px;
+  height: 108px;
+  top: 80%;
+  right: 7%;
+  animation: float 8.1s ease-in-out infinite;
+}
+
+.circle-6 {
+  width: 86px;
+  height: 86px;
+  top: 16%;
+  left: 44%;
+  animation: float 6.4s ease-in-out infinite reverse;
+}
+
+.circle-7 {
+  width: 102px;
+  height: 102px;
+  bottom: 36%;
+  right: 28%;
+  animation: float 7.9s ease-in-out infinite;
+}
+
+.circle-8 {
+  width: 132px;
+  height: 132px;
+  top: 42%;
+  left: 27%;
+  animation: float 6.9s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.08;
+  }
+  50% {
+    transform: translate(24px, -24px) scale(1.14);
+    opacity: 0.12;
+  }
+}
+
+.print-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.logo-section {
+  margin-bottom: 20px;
+}
+
+.logo-box {
+  margin-bottom: 20px;
+}
+
+.logo-gradient {
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #F44336 0%, #9C27B0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.logo-m {
+  font-size: 48px;
+  font-weight: 700;
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.app-title {
+  font-size: 42px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -1px;
+}
+
+.title-memo {
+  color: white;
+}
+
+.title-pixx {
+  color: #4DD0E1;
+}
+
+.printing-text {
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.progress-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  
+}
+
+.progress-ring {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.progress-ring-background {
+  transition: stroke-dashoffset 0.1s;
+}
+
+.progress-ring-progress {
+  transition: stroke-dashoffset 0.1s;
+}
+
+.progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.notification-text {
+  color: white;
+  font-size: 22px;
+  margin: 0;
+  max-width: 300px;
+  line-height: 1.5;
+}
+
+.btn-whatsapp {
+  padding: 14px 24px;
+  border-radius: 50px;
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.btn-whatsapp:active {
+  transform: scale(0.98);
+  opacity: 0.9;
+}
+
+.whatsapp-icon {
+  flex-shrink: 0;
+}
+
