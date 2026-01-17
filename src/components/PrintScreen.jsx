@@ -5,15 +5,9 @@ import logo from "../assets/logo.png"
 
 function PrintScreen({ onBack }) {
   const [progress, setProgress] = useState(0)
-  const radius = 80;
-const meterCircumference = 2 * Math.PI * radius;
-
-const percentage = progress; // your existing state/prop
-const meterOffset =
-  meterCircumference - (percentage / 100) * meterCircumference;
-
 
   useEffect(() => {
+    // 60,000ms / 100 steps = 600ms per 1% increment to reach 100% in 60 seconds
     const interval = setInterval(() => {
       setProgress(prev => {
         if (prev >= 100) {
@@ -22,17 +16,13 @@ const meterOffset =
         }
         return prev + 1
       })
-    }, 100)
+    }, 600)
 
     return () => clearInterval(interval)
   }, [])
 
-  const circumference = 2 * Math.PI * 80
-  const offset = circumference - (progress / 100) * circumference
-
   return (
     <div className="print-screen gradient-main">
-   
       <ProgressBar currentStep={4} />
       
       <div className="print-content">
@@ -41,57 +31,16 @@ const meterOffset =
         </div>
 
         <p className="printing-text">Printing your photos...</p>
-       
 
-
-
-
-
-
-
-<div className="loader">
-  <div className="valueInsideLoader">40%</div>
-</div>
-
-
-{/*  */}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <div className="loader">
+          {/* We pass the progress to CSS via the --p variable to drive the animation */}
+          <div 
+            className="valueInsideLoader" 
+            style={{ '--p': `${progress}%` }}
+          >
+            {progress}%
+          </div>
+        </div>
 
         <p className="notification-text">MemoPixx will notify you when it's ready at the kiosk</p>
 
@@ -107,4 +56,3 @@ const meterOffset =
 }
 
 export default PrintScreen
-
