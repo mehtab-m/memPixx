@@ -5,6 +5,13 @@ import logo from "../assets/logo.png"
 
 function PrintScreen({ onBack }) {
   const [progress, setProgress] = useState(0)
+  const radius = 80;
+const meterCircumference = 2 * Math.PI * radius;
+
+const percentage = progress; // your existing state/prop
+const meterOffset =
+  meterCircumference - (percentage / 100) * meterCircumference;
+
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -34,34 +41,58 @@ function PrintScreen({ onBack }) {
         </div>
 
         <p className="printing-text">Printing your photos...</p>
+       
 
-        <div className="progress-container">
-          <svg className="progress-ring" width="200" height="200">
-            <circle
-              className="progress-ring-background"
-              cx="100"
-              cy="100"
-              r="80"
-              fill="none"
-              stroke="rgba(255, 255, 255, 0.2)"
-              strokeWidth="8"
-            />
-            <circle
-              className="progress-ring-progress"
-              cx="100"
-              cy="100"
-              r="80"
-              fill="none"
-              stroke="#4DD0E1"
-              strokeWidth="8"
-              strokeLinecap="round"
-              strokeDasharray={circumference}
-              strokeDashoffset={offset}
-              transform="rotate(-90 100 100)"
-            />
-          </svg>
-          <div className="progress-text">{progress}%</div>
-        </div>
+
+
+
+
+
+
+
+
+        <div className="segmented-meter">
+  <svg className="segmented-meter__svg" viewBox="0 0 200 200"
+  >
+    {[...Array(20)].map((_, i) => {
+      const angle = (360 / 20) * i;
+      const active = i < Math.round((progress / 100) * 20);
+
+      return (
+        <rect
+          key={i}
+          x="98"
+          y="36"
+          width="12"
+          height="14"
+          // rx="2"
+          
+          transform={`rotate(${angle} 100 100)`}
+        />
+      );
+    })}
+
+    <defs>
+      <linearGradient id="meterGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stopColor="#6A5ACD" />
+        <stop offset="50%" stopColor="#4DD0E1" />
+        <stop offset="100%" stopColor="#2ECC71" />
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <div className="segmented-meter__text">{progress}%</div>
+</div>
+
+
+
+
+
+
+
+
+
+
 
         <p className="notification-text">MemoPixx will notify you when it's ready at the kiosk</p>
 

@@ -208,6 +208,42 @@
   line-height: 1.5;
 }
 
+.circular-meter {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.circular-meter__svg {
+  transform: rotate(-90deg);
+}
+
+.circular-meter__track {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.25);
+  stroke-width: 8;
+}
+
+.circular-meter__value {
+  fill: none;
+  stroke: #4dd0e1;
+  stroke-width: 8;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.6s ease;
+}
+
+.circular-meter__label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+
 .btn-whatsapp {
   padding: 14px 24px;
   border-radius: 50px;
@@ -234,3 +270,24 @@
   flex-shrink: 0;
 }
 
+.segmented-meter {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.segmented-meter__svg {
+  width: 100%;
+  height: 100%;
+}
+
+.segmented-meter__text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #ffffff;
+}
