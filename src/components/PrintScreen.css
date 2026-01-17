@@ -269,25 +269,47 @@
 .whatsapp-icon {
   flex-shrink: 0;
 }
-
-.segmented-meter {
-  position: relative;
-  width: 200px;
+.valueInsideLoader {
   height: 200px;
-}
-
-.segmented-meter__svg {
-  width: 100%;
-  height: 100%;
-}
-
-.segmented-meter__text {
-  position: absolute;
-  inset: 0;
+  width: 200px;
+  border-radius: 50%;
   display: flex;
-  align-items: center;
   justify-content: center;
-  font-size: 2.4rem;
-  font-weight: 700;
-  color: #ffffff;
+  align-items: center;
+  font-weight: bold;
+
+  /* Layer 1 → FULL continuous gradient (once around circle)
+     Layer 2 → Dash mask (blocks + gaps) */
+  background:
+    conic-gradient(
+      from -90deg,
+      #2EE59D 0deg,
+      #3A86FF 180deg,
+      #2EC4B6 270deg,
+      #2EE59D 360deg
+    ),
+    repeating-conic-gradient(
+      from -90deg,
+      black 0deg 8deg,
+      transparent 8deg 13deg
+    );
+
+  /* Apply dash mask to gradient */
+  -webkit-mask:
+    radial-gradient(circle, transparent 55%, black 56%),
+    repeating-conic-gradient(
+      from -90deg,
+      black 0deg 8deg,
+      transparent 8deg 13deg
+    );
+  -webkit-mask-composite: intersect;
+
+          mask:
+    radial-gradient(circle, transparent 55%, black 56%),
+    repeating-conic-gradient(
+      from -90deg,
+      black 0deg 8deg,
+      transparent 8deg 13deg
+    );
+          mask-composite: intersect;
 }

@@ -49,40 +49,39 @@ const meterOffset =
 
 
 
-
-
-        <div className="segmented-meter">
-  <svg className="segmented-meter__svg" viewBox="0 0 200 200"
-  >
-    {[...Array(20)].map((_, i) => {
-      const angle = (360 / 20) * i;
-      const active = i < Math.round((progress / 100) * 20);
-
-      return (
-        <rect
-          key={i}
-          x="98"
-          y="36"
-          width="12"
-          height="14"
-          // rx="2"
-          
-          transform={`rotate(${angle} 100 100)`}
-        />
-      );
-    })}
-
-    <defs>
-      <linearGradient id="meterGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stopColor="#6A5ACD" />
-        <stop offset="50%" stopColor="#4DD0E1" />
-        <stop offset="100%" stopColor="#2ECC71" />
-      </linearGradient>
-    </defs>
-  </svg>
-
-  <div className="segmented-meter__text">{progress}%</div>
+<div className="loader">
+  <div className="valueInsideLoader">40%</div>
 </div>
+
+
+{/*  */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
